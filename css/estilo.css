@@ -1,9 +1,18 @@
+:root {
+	--cor-primaria: #f7f7f7;
+	--cor-secundaria: #ffffff;
+	--vermelho-primario: #ee2211;
+	--vermelho-secundario: #900;
+	--cor-textos: #000000;
+	--cor-linhas-1: #z;
+	--cor-linhas-2: #fcfcfc;
+}
 
 /* estilos gerais */
 body {
 	margin: 0px;
 	margin-top: 60px;
-	background: #f7f7f7;
+	background: var(--cor-primaria);
 	display: grid;
 	justify-items: center;
 	gap: 60px;
@@ -15,6 +24,7 @@ h2,
 h3,
 p {
 	margin: 0px;
+	color: var(--cor-textos);
 }
 
 p {
@@ -33,7 +43,7 @@ img {
 }
 
 .bg-color {
-	background: white;
+	background: var(--cor-secundaria);
 }
 
 ul {
@@ -61,9 +71,20 @@ ul {
 	display: block;
 	color: black;
 	padding: 1rem 2rem;
-	background: white;
+	background: var(--cor-secundaria);
 	border-radius: 4px;
 }
+
+.header-menu li {
+	border: 2px solid transparent;
+	border-radius: 4px;
+}
+
+.header-menu li:hover {
+	border: 2px solid var(--vermelho-primario);
+	border-radius: 4px;
+}
+
 
 /* containeres */
 
@@ -90,12 +111,12 @@ ul {
 .botao-vermelho {
 	color: white;
 	padding: 15px 30px;
-	background: #ee2211;
+	background: var(--vermelho-primario);
 	border-radius: 4px;
 }
 
 .botao-vermelho:hover {
-	background: #900;
+	background: var(--vermelho-secundario);
 
 }
 
@@ -103,7 +124,7 @@ ul {
 	display: block;
 	height: 4px;
 	width: 60px;
-	background: #ee2211;
+	background: var(--vermelho-primario);
 	position: absolute;
 	right: -30px;
 	top: 30px;
@@ -116,7 +137,7 @@ h2 {
 	padding: 40px;
 	align-self: center;
 	position: relative;
-	background-image: url(../img/onda.svg);
+	background-image: url(../img/onda-light.svg);
 }
 
 .container-detalhes {
@@ -133,11 +154,11 @@ h2 {
 }
 
 .detalhes-item:nth-child(odd) {
-	background: #f7f7f7;
+	background: var(--cor-primaria);
 }
 
 .detalhes-item:hover {
-	border-left: 4px solid #ee2211;
+	border-left: 4px solid var(--vermelho-primario);
 }
 
 .detalhes-item p {
@@ -147,7 +168,7 @@ h2 {
 /* footer */
 
 .rodape {
-	background: white;
+	background: var(--cor-secundaria);
 	box-sizing: border-box;
 	width: 100%;
 	padding: 40px;
@@ -198,4 +219,20 @@ h2 {
 }
 
 
-
+@media (prefers-color-scheme: dark) {
+	:root {
+		--cor-primaria: #262525;
+		--cor-secundaria: #000000;
+		--vermelho-primario: #ee2211;
+		--vermelho-secundario: #900;
+		--cor-textos: #ffffff;
+	}
+	
+	.botao-vermelho,.header-menu a, h2{
+		color: var(--cor-textos);
+	}
+	
+	h2 {
+		background-image: url(../img/onda-dark.svg);
+	}
+}
